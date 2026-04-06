@@ -9,10 +9,6 @@ export default function Home() {
     <div className="space-y-6 pt-24">
       <Hero />
 
-      <section id="experience" className="px-8 pb-20">
-        <ExperienceSection experiences={experiences} />
-      </section>
-
       <section id="stack" className="px-8 pb-20">
         <TechStackSection stack={techStack} />
       </section>
