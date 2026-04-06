@@ -45,15 +45,26 @@ export default function Navbar() {
 
         {/* Desktop nav links — centered flex-1 */}
         <div className="hidden md:flex flex-1 justify-center items-center space-x-10">
-          {navLinks.map(({ label, href }) => (
-            <a
-              key={href}
-              href={href}
-              className="hover:text-[#B1AFFF] hover:font-bold transition-colors font-medium"
-            >
-              {label}
-            </a>
-          ))}
+          {navLinks.map(({ label, href }) => {
+            // Evaluamos si el link es la ruta actual
+            const isActive = pathname === href;
+            
+            return (
+              <Link
+                key={href}
+                href={href}
+                // Si es externo (Sponsor), lo abre en otra pestaña, si no, normal
+                target={href.startsWith("http") ? "_blank" : "_self"}
+                className={`transition-colors ${
+                  isActive
+                    ? "text-[#B1AFFF] font-bold" // Link activo iluminado
+                    : "text-[#2b2d2f] font-medium hover:text-[#B1AFFF] hover:font-bold" // Link inactivo
+                }`}
+              >
+                {label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* CTA button — right 1/4 */}
@@ -62,7 +73,7 @@ export default function Navbar() {
             href="mailto:contact@jareteduardo.dev"
             className="group btn btn-md bg-[#B1AFFF] text-white py-2 px-6 rounded-3xl font-bold hover:bg-[#8E8CD8] transition-colors"
           >
-            {/* Rocket icon — mirrors reference navbar.html exactly */}
+            {/* Rocket icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -153,24 +164,32 @@ export default function Navbar() {
 
           {/* Mobile links */}
           <nav className="flex flex-col space-y-6">
-            {navLinks.map(({ label, href }) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-2xl font-semibold text-slate-900"
-              >
-                {label}
-              </a>
-            ))}
+            {navLinks.map(({ label, href }) => {
+              const isActive = pathname === href;
+
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : "_self"}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`text-2xl font-semibold transition-colors ${
+                    isActive ? "text-[#B1AFFF]" : "text-slate-900"
+                  }`}
+                >
+                  {label}
+                </Link>
+              );
+            })}
 
             <div className="pt-6 flex justify-center items-center">
+              {/* Actualicé también el botón móvil para que diga "Contact Me" y abra tu correo */}
               <a
-                href="#contact"
+                href="mailto:contact@jareteduardo.dev"
                 onClick={() => setIsMenuOpen(false)}
                 className="btn btn-md bg-[#B1AFFF] text-white py-2 px-6 rounded-3xl font-bold hover:bg-[#8E8CD8] transition-colors"
               >
-                {/* Lightbulb icon — mirrors reference mobile CTA */}
+                {/* Lightbulb icon */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -187,7 +206,7 @@ export default function Navbar() {
                   <path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3" />
                   <path d="M9.7 17l4.6 0" />
                 </svg>
-                Let&apos;s Talk
+                Contact Me
               </a>
             </div>
           </nav>
