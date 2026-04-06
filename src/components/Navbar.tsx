@@ -7,7 +7,7 @@ import Link from "next/link";
 const navLinks = [
   { label: "About",    href: "/about"    },
   { label: "Projects", href: "/projects" },
-  { label: "Contact",  href: "#contact"  },
+  { label: "Sponsor Me",  href: "https://github.com/sponsors/JaretEduardo"  },
 ];
 
 export default function Navbar() {

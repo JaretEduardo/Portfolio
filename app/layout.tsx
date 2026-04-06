@@ -40,12 +40,6 @@ export default function RootLayout({
               {children}
             </div>
           </main>
-
-          <footer className="w-full py-4 border-t border-gray-100 bg-[#f3f4f6]">
-            <p className="text-xs text-slate-400 text-center">
-              Developed by Jaret Eduardo &nbsp;|&nbsp; UI/UX Inspiration by Liz ✨
-            </p>
-          </footer>
         </div>
       </body>
     </html>
