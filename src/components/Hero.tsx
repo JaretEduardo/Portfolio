@@ -33,7 +33,7 @@ export default function Hero() {
         {/* CTA buttons — mirrors home.html button row */}
         <div className="animate-fade-up flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4">
           <a
-            href="#projects"
+            href="/projects"
             className="flex-1 min-w-[200px] btn btn-xl bg-(--primary-color) border-(--primary-color) text-white font-bold text-lg px-8 py-4 rounded-xl shadow-md hover:bg-(--primary-shadow) transition-all flex justify-center items-center gap-2"
           >
             View my work
