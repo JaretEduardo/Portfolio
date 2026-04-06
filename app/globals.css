@@ -1,26 +1,65 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
 
+/* Font token — Quicksand is injected as --font-quicksand by next/font/google in layout.tsx */
+@theme {
+  --font-sans: var(--font-quicksand), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* ── Design tokens (mirrors referencia-liz styles.css exactly) ─────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-color:        #B1AFFF;
+  --background-color:     #f3f4f6;
+  --primary-light:        #D0CEFF;
+  --primary-light-2:      #EEEEFF;
+  --primary-shadow:       #8E8CD8;
+  --secondary-pink:       #F2C6D2;
+  --secondary-pink-light: #F9E2E8;
+  --text-color:           #2b2d2f;
+  --error-color:          #A53F3F;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Entrance animations (exact values from reference) ─────────────────── */
+@keyframes fade-down {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-right {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fade-left {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.animate-fade-down  { animation: fade-down  0.8s ease-out forwards; }
+.animate-fade-up    { animation: fade-up    0.8s ease-out forwards; }
+.animate-fade-right { animation: fade-right 0.8s ease-out forwards; }
+.animate-fade-left  { animation: fade-left  0.8s ease-out forwards; }
+
+@media (min-width: 768px) {
+  .md\:animate-fade-down  { animation: fade-down  0.8s ease-out forwards !important; }
+  .md\:animate-fade-up    { animation: fade-up    0.8s ease-out forwards !important; }
+  .md\:animate-fade-right { animation: fade-right 0.8s ease-out forwards !important; }
+  .md\:animate-fade-left  { animation: fade-left  0.8s ease-out forwards !important; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Navbar active link ─────────────────────────────────────────────────── */
+.nav-link-active {
+  color: var(--primary-color) !important;
+  font-weight: 700 !important;
+}
+
+/* ── Global selection color ─────────────────────────────────────────────── */
+::selection {
+  background-color: var(--primary-color);
+  color: #2b2d2f;
 }
