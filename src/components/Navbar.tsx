@@ -59,7 +59,7 @@ export default function Navbar() {
         {/* CTA button — right 1/4 */}
         <div className="hidden md:flex justify-end md:w-1/4">
           <a
-            href="#contact"
+            href="mailto:contact@jareteduardo.dev"
             className="group btn btn-md bg-[#B1AFFF] text-white py-2 px-6 rounded-3xl font-bold hover:bg-[#8E8CD8] transition-colors"
           >
             {/* Rocket icon — mirrors reference navbar.html exactly */}
@@ -80,7 +80,7 @@ export default function Navbar() {
               <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
               <path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
             </svg>
-            Let&apos;s Talk
+            Contact Me
           </a>
         </div>
 

@@ -8,7 +8,7 @@ export default function Hero() {
         {/* Available badge — mirrors home.html exactly */}
         <div className="animate-fade-down inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 shadow-sm">
           <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-          AVAILABLE FOR PROJECTS ✨
+          OPEN TO OPPORTUNITIES ✨
         </div>
 
         {/* Credits */}
@@ -46,16 +46,19 @@ export default function Hero() {
 
           {/* Secondary — white solid, no opacity tricks */}
           <a
-            href="#contact"
+            href="/Jaret_CV.pdf"
+            download="Jaret_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-1 min-w-[200px] btn btn-xl bg-white text-[#2b2d2f] border border-gray-200 shadow-md px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all flex justify-center items-center gap-2"
           >
             {/* Download/contact icon */}
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-              <path d="M3 7l9 6l9 -6" />
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Get in Touch
+            Download CV
           </a>
         </div>
       </div>
@@ -67,14 +70,6 @@ export default function Hero() {
           <span className="text-7xl md:text-9xl font-bold text-(--primary-color) select-none opacity-40">
             JE
           </span>
-        </div>
-
-        {/* Terminal badge — mirrors home.html floating badge exactly */}
-        <div className="absolute right-[5%] md:left-[5%] md:right-auto bottom-6 md:bottom-20 bg-white p-3 rounded-xl shadow-xl flex gap-1 items-center z-20">
-          <span className="w-2 h-2 bg-[#ff5f56] rounded-full" />
-          <span className="w-2 h-2 bg-[#ffbd2e] rounded-full" />
-          <span className="w-2 h-2 bg-[#27c93f] rounded-full" />
-          <code className="ml-2 font-mono text-[10px] md:text-sm font-bold">&lt;/&gt;</code>
         </div>
       </div>
     </section>
