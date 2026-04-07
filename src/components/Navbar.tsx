@@ -22,10 +22,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navBg =
-    isHome && !isScrolled
-      ? "bg-transparent"
-      : "bg-white/90 backdrop-blur-md shadow-sm";
+  const navBg = "bg-white/90 backdrop-blur-md shadow-sm";
 
   return (
     <>
@@ -37,8 +34,7 @@ export default function Navbar() {
         <div className="flex items-center md:w-1/4">
           <Link href="/" className="flex items-center cursor-pointer group">
             <span className="text-xl font-bold tracking-tight transition-all duration-300 group-hover:brightness-110">
-              <span className="text-[#B1AFFF]">JE</span>
-              <span className="text-[#2b2d2f]">.</span>
+              <span className="text-[#B1AFFF]">JARET EDUARDO</span>
             </span>
           </Link>
         </div>

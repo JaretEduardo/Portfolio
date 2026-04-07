@@ -1,25 +1,25 @@
 export default function Hero() {
   return (
-    <section className="md:pb-20 px-8 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-25">
+    <section className="md:pb-20 px-8 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-8 relative overflow-visible">
 
       {/* ── Left: text content ─────────────────────────────────────────── */}
-      <div className="flex-1 space-y-6 z-10 text-center md:text-left">
+      <div className="flex-1 space-y-6 z-10 text-center md:text-left md:w-1/2 md:max-w-xl md:pl-8 lg:pl-16">
 
-        {/* Available badge — mirrors home.html exactly */}
+        {/* Available badge */}
         <div className="animate-fade-down inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 shadow-sm">
           <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
           OPEN TO OPPORTUNITIES ✨
         </div>
 
         {/* Credits */}
-        <div className="text-xl text-violet-400 font-medium mb-2 animate-fade-down">
+        <div className="text-xl text-[#8E8CD8] font-medium mb-2 animate-fade-down">
           A Special Thanks to Liz ✨ for UI/UX Design Inspiration
         </div>
 
         {/* H1 */}
         <h1 className="animate-fade-down text-4xl md:text-7xl font-bold leading-[1.1]">
           Building{" "}
-          <span className="text-(--primary-color)">high-performance</span>{" "}
+          <span className="text-[#B1AFFF]">high-performance</span>{" "}
           systems from scratch.
         </h1>
 
@@ -30,21 +30,19 @@ export default function Hero() {
           API Inmobiliaria (.NET Core).
         </p>
 
-        {/* CTA buttons — mirrors home.html button row */}
+        {/* CTA buttons */}
         <div className="animate-fade-up flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4">
           <a
             href="/projects"
-            className="flex-1 min-w-[200px] btn btn-xl bg-(--primary-color) border-(--primary-color) text-white font-bold text-lg px-8 py-4 rounded-xl shadow-md hover:bg-(--primary-shadow) transition-all flex justify-center items-center gap-2"
+            className="flex-1 min-w-[200px] btn btn-xl bg-[#B1AFFF] border-[#B1AFFF] text-white font-bold text-lg px-8 py-4 rounded-xl shadow-md hover:bg-[#8E8CD8] transition-all flex justify-center items-center gap-2"
           >
             View my work
-            {/* Arrow right — tabler icon */}
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" />
             </svg>
           </a>
 
-          {/* Secondary — white solid, no opacity tricks */}
           <a
             href="/Jaret_CV.pdf"
             download="Jaret_CV.pdf"
@@ -52,7 +50,6 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="flex-1 min-w-[200px] btn btn-xl bg-white text-[#2b2d2f] border border-gray-200 shadow-md px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all flex justify-center items-center gap-2"
           >
-            {/* Download/contact icon */}
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
@@ -63,15 +60,15 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Right: avatar circle + terminal badge ──────────────────────── */}
-      <div className="animate-fade-down md:animate-fade-left flex-1 relative flex justify-center w-full">
-        {/* Circle — bg-[#f4ece3] mirrors reference avatar bg color */}
-        <div className="relative w-[280px] h-[280px] md:w-[450px] md:h-[450px] rounded-full border-8 border-white shadow-2xl overflow-hidden bg-[#f4ece3] flex items-center justify-center group">
-          <span className="text-7xl md:text-9xl font-bold text-(--primary-color) select-none opacity-40">
-            JE
-          </span>
-        </div>
+      {/* ── Right: Emblema Técnico ─────────────────────────────────────── */}
+      <div className="hidden md:flex flex-1 justify-end items-center w-full animate-fade-left md:w-1/2">
+        <img 
+          src="/PixelArt.png" 
+          alt="Jaret's Technical Emblem"
+          className="w-[115%] lg:w-[130%] max-w-none h-auto object-contain md:translate-x-4 lg:translate-x-8"
+        />
       </div>
+
     </section>
   );
 }

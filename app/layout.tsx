@@ -35,7 +35,7 @@ export default function RootLayout({
           <Navbar />
 
           {/* Mirrors main-layout.html <main> + inner container */}
-          <main className="flex-1 bg-[#f3f4f6] min-h-screen">
+          <main className="flex-1 bg-[#F6F5FF] min-h-screen">
             <div className="mx-auto w-full max-w-7xl 2xl:max-w-screen-2xl py-0">
               {children}
             </div>
